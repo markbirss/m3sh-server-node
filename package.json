@@ -1,0 +1,31 @@
+{
+  "name": "m3sh-server-node",
+  "version": "1.0.0",
+  "description": "The official distribution of the M3SH \"Dead Drop\" Server written in Node.js for Raspberry Pi Zero W",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foreignmedia/M3SH-Server-Node.git"
+  },
+  "keywords": [
+    "Secure",
+    "Bluetooth",
+    "Messaging",
+    "Mesh",
+    "M3SH",
+    "Networking"
+  ],
+  "author": "Matt Hrushka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foreignmedia/M3SH-Server-Node/issues"
+  },
+  "homepage": "https://github.com/foreignmedia/M3SH-Server-Node#readme",
+  "dependencies": {
+    "bleno": "^0.4.1",
+    "noble": "^1.8.0"
+  }
+}
