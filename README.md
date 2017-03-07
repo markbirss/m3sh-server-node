@@ -1,7 +1,7 @@
 ![M3SH](https://raw.githubusercontent.com/foreignmedia/m3sh-server-node/master/assets/m3sh-logo.png)
 
 # M3SH "Dead Drop" Server (Node.js)
-The official repo for the M3SH "Dead Drop" server written in Node.js for Raspberry Pi Zero W.
+The official repo for the M3SH "Dead Drop" server written in Node.js for [Raspberry Pi Zero W](https://www.raspberrypi.org/products/pi-zero-wireless/).
 
 ## About M3SH
 M3SH is a mobile ad hock messaging network ([MANET](https://en.wikipedia.org/wiki/Mobile_ad_hoc_network)) concept based on mesh flooding over Bluetooth LE. In straight foreward terms, it relays secure messages in close proximity through nodes that can either be a user's phone or a dedicated server. The messages are continually relayed until they either expire or reach the intended destination. The more nodes on the network, and the more the nodes travel within a given timeframe, the greater chance the message will be delivered.
@@ -13,11 +13,11 @@ Based on the ability of Bluetooth LE to advertise to a specifc class of devices,
 
 ### Terminology
 To make sure we're on the same page, these are the terms that I'll be using to prevent confusion
-* Node: General term for any node on the network with the M3SH software running.
-* Client Node: Term referring specifically to a Node that exists on a client device with a M3SH App installed capable of sending messages.
-* Relay Node ("Dead Drop"): Term referring specifically to a Node that exists on a server dedicated to relaying messages only.
-* Origin Node: Term referring to the Client Node in which a specific message was created (originated).
-* Package: Term referring to a single message that contains the intended destination and the encrypted body.
+* __Node__: General term for any node on the network with the M3SH software running.
+* __Client Node__: Term referring specifically to a Node that exists on a client device with a M3SH App installed capable of sending messages.
+* __Relay Node ("Dead Drop")__: Term referring specifically to a Node that exists on a server dedicated to relaying messages only.
+* __Origin Node__: Term referring to the Client Node in which a specific message was created (originated).
+* __Package__: Term referring to a single message that contains the intended destination and the encrypted body.
 
 ### The Laws
 The following are the working "*Laws*" I've developed to prevent inherent issues with flood-based mesh networks including preventing packet storms, DOS attacks and ensuring general network reliability. These laws are intended to be the basis for developing any client or server node.
@@ -37,3 +37,11 @@ The following are the working "*Laws*" I've developed to prevent inherent issues
 4. A *receiving* Node will keep a record of every package recieved to fullfill *__Package Law #1__*.
 3. A *receiving* Node will only accept a maximum number of bytes per transaction and will cancel the receiving session as soon as the byte limit is exceeded.
 4. A *receiving* Node will keep a record of "rogue nodes" that violate the byte limit, or have sent malformed Packages and will refuse connection to these Nodes in the future.
+
+# Project
+
+Ultimately, I'm intending to release this version as an NPM package and a complete Raspbian image for the ease of install. As the project progresses, i'll be posting setup instructions here. Please contact me if you'd like to chat about contributing or writing a client or server of your own, or if you have any grand ideas.
+
+### Credits
+This project utilizes the following amazing code from:
+
