@@ -3,10 +3,9 @@
 # M3SH "Dead Drop" Server (Node.js)
 The official repo for the M3SH "Dead Drop" server written in Node.js for [Raspberry Pi Zero W](https://www.raspberrypi.org/products/pi-zero-wireless/).
 
-### Status
 | Date        | Status  |
-| ------------- |---|
-| March 7th, 2017 | Sorry, no code yet. Working on the iOS client app and researching the new Pi Zero W bluetooth LE capabilities. Watch this space.  |
+| --- | --- |
+| 03.07.2017 | Sorry, no code yet. Working on the iOS client app and researching the new Pi Zero W bluetooth LE capabilities. Watch this space.  |
 
 ## About M3SH
 M3SH is a mobile ad hock messaging network ([MANET](https://en.wikipedia.org/wiki/Mobile_ad_hoc_network)) concept based on mesh flooding over Bluetooth LE. In straight foreward terms, it relays secure messages in close proximity through nodes that can either be a user's phone or a dedicated server. The messages are continually relayed until they either expire or reach the intended destination. The more nodes on the network, and the more the nodes travel within a given timeframe, the greater chance the message will be delivered.
