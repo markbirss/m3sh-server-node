@@ -19,13 +19,14 @@
     "Networking"
   ],
   "author": "Matt Hrushka",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/foreignmedia/M3SH-Server-Node/issues"
   },
   "homepage": "https://github.com/foreignmedia/M3SH-Server-Node#readme",
   "dependencies": {
-    "bleno": "^0.4.1",
+    "bleno": "^0.4.2",
+    "md5": "^2.2.1",
     "noble": "^1.8.0"
   }
 }
