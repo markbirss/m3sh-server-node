@@ -1,5 +1,7 @@
 # RaspberryPi Zero W Setup
-The Zero W needs a bit of custom work before you can clone this repository and get it going.
+The Zero W needs a bit of custom work before you can clone this repository and get it going. 
+
+**Note**: I have not tested this with the Raspberry Pi Zero (without the built in Wifi & Bluetooth) or any of the other Raspberry Pi's but that doesnt mean it wont work. Give it a shot!
 
 ## 1. Install Raspbian Jessie
 Use your favorite imaging app to burn an image of Jessie onto an SD card of your choice. I'm a fan of [Etcher](https://etcher.io). You can find the latest version of [Raspbian Jessie LITE here](https://www.raspberrypi.org/downloads/raspbian/).
@@ -11,12 +13,12 @@ $ sudo -
 $ wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-armv6l.tar.xz
 $ tar -xvf node-v7.7.2-linux-armv6l.tar.xz
 $ cd node-v7.7.2-linux-armv6l
-$ cp -R bin/ /usr/local/
-$ cp -R include /usr/local/
-$ cp -R lib/ /usr/local/
-$ cp -R share/ /usr/local/
+$ sudo cp -R bin/ /usr/local/
+$ sudo cp -R include /usr/local/
+$ sudo cp -R lib/ /usr/local/
+$ sudo cp -R share/ /usr/local/
 ```
-Make sure to clearn up:
+Make sure to clean up:
 ```
 $ cd ..
 $ rm node-v7.7.2-linux-armv6l.tar.xz
@@ -24,7 +26,18 @@ $ rm -rf node-v7.7.2-linux-armv6l
 $ node --version
 $ exit
 ```
-## Install PostgreSQL
+## 3. Install PostgreSQL
+### A. Update & Install the Package
 ```
-
+$ sudo -
+$ sudo apt-get update
+$ sudo apt-get install postgresql-9.4
 ```
+### B. Create a Password
+```
+$ sudo -u postgres psql
+# \password postgres
+[Enter & Confirm Password - Default is: deaddrop]
+# \q
+```
+*If you choose a different password, make sure to change it in the code as well.*
