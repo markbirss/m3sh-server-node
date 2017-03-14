@@ -14,6 +14,7 @@ For a technical writeup of the M3SH system and the laws that govern it, or to ge
 
 | Date        | Status  |
 | --- | --- |
+| 03.14.2017 | Finished up a proof of concept that creates a central, connects, handshakes and receives chunked data. |
 | 03.09.2017 | No code yet. Currently working on the iOS Client  |
 
 ---
@@ -28,13 +29,16 @@ More to come here.
 
 Please use our GitHub page to log a bug or suggest a feature.
 
-https://github.com/hrushka/M3SH-Server-Node/issues
+https://github.com/hrushka/m3sh-server-node/issues
 
 ## Libraries & Credits
 This project utilizes varying portions of the following code:
 
 | Library | Usage | License |
 | --- | --- | --- |
+| [sandeepmistry / noble](https://github.com/sandeepmistry/noble) | Bluetooth LE Central library | [MIT](https://github.com/sandeepmistry/noble/blob/master/LICENSE) |
+| [sandeepmistry / bleno](https://github.com/sandeepmistry/bleno) | Bluetooth LE Peripheral library | [MIT](https://github.com/sandeepmistry/bleno/blob/master/LICENSE) |
+| [pvord / node-md5](https://github.com/pvorb/node-md5) | MD5 implementation for Node | [BSD-3-Clause](https://github.com/pvorb/node-md5/blob/master/LICENSE) |
 
 
 ## Cryptography Notice
