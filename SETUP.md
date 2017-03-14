@@ -41,11 +41,11 @@ $ sudo -u postgres psql
 ```
 Enter in `deaddrop` for the password. This is the default. If you want to change it, remember to also update the `config/dbinit.sql` file.
 ```
-# CREATE DATABASE deaddrop; // Create the database. The tables will be built automaticaly.
+# CREATE DATABASE deaddrop;
 ```
 The database `deaddrop` is the default. If you want to change it, make sure to also update the `config/dbinit.sql` file.
 ```
-# \q // Quit.
+# \q
 ```
 
 ## 4. Set Environment
