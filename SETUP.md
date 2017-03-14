@@ -41,3 +41,8 @@ $ sudo -u postgres psql
 # \q
 ```
 *If you choose a different password, make sure to change it in the code as well.*
+## 4. Set Environment
+```
+$ NOBLE_MULTI_ROLE=1; export NOBLE_MULTI_ROLE
+```
+Then you can use `printenv` to make sure it's set. This will allow your Pi to operate as both a *Central* and a *Peripheral*.
