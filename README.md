@@ -3,6 +3,8 @@
 # M3SH Server "Dead Drop" for Node.js & Raspberry Pi Zero W
 M3SH is an off-line, secure messaging platform that uses Bluetooth LE (aka Bluetooth Low Energy, Bluetooth Smart) to communicate by relaying encrypted messages within a network of M3SH devices.
 
+### Click [here](https://github.com/hrushka/m3sh-sever-node/blob/master/SETUP.md) for setup instructions.
+
 ## Technical
 For a technical writeup of the M3SH system and the laws that govern it, or to get started building your own M3SH node click [here]().
 
