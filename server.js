@@ -1,25 +1,9 @@
 var noble = require( 'noble' );
 var receiver = require( './receiver' );
+var pgp = require( 'pg-promise' )();
+var settings = require( './settings' );
 
-// Settings.
-var settings = {
-    uuids: {
-        service: "8E5E4D5C-DBB8-486B-96BC-FE8B52D3C6F6".replace( /-/g, "" )
-            .toLowerCase(),
-        characteristics: {
-            service: "63A595A8-4065-45F2-A03B-5E6AC8298651".replace( /-/g, "" )
-                .toLowerCase()
-        }
-    },
-    data: {
-        end: 'EOD',
-        canceled: 'COD'
-    },
-    name: "deaddrop"
-}
-
-
-let rec = new receiver( settings );
+let rec = new receiver();
 
 // Kick things off when powered on
 noble.on( 'stateChange', function ( state ) {

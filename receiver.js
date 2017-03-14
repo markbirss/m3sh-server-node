@@ -1,10 +1,9 @@
+var settings = require( './settings' );
 var md5 = require( 'md5' );
 
 class Receiver {
 
-    constructor( settings ) {
-
-        this.settings = settings;
+    constructor() {
         this.connectionPool = [];
         this.dataPool = [];
     }
@@ -12,7 +11,6 @@ class Receiver {
     connect( peripheral ) {
 
         let uuid = peripheral.advertisement.serviceUuids[ 0 ];
-        let settings = this.settings;
         let pool = this.connectionPool;
 
         if ( pool[ uuid ] !== undefined ) {
@@ -62,9 +60,7 @@ class Receiver {
 
     begin( characteristic ) {
 
-        var settings = this.settings;
         var _state = this;
-
         characteristic.notify( true, function ( err ) {
 
             characteristic.on( 'data', function ( data, isNotification ) {

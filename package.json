@@ -27,6 +27,7 @@
   "dependencies": {
     "bleno": "^0.4.2",
     "md5": "^2.2.1",
-    "noble": "^1.8.0"
+    "noble": "^1.8.0",
+    "pg-promise": "^5.6.4"
   }
 }
