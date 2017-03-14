@@ -37,8 +37,13 @@ $ sudo apt-get install postgresql-9.4
 ```
 $ sudo -u postgres psql
 # \password postgres
-[Enter & Confirm Password: deaddrop]
-# CREATE DATAVASE deaddrop;
+```
+Enter in `deaddrop` for the password. This is the default. If you want to change it, remember to also update the `config/dbinit.sql` file.
+```
+# CREATE DATABASE deaddrop;
+```
+The database `deaddrop` is the default. If you want to change it, make sure to also update the `config/dbinit.sql` file.
+```
 # \q
 ```
 *If you choose a different password, make sure to change it in the code as well.*
