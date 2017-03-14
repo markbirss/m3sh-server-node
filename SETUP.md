@@ -26,6 +26,7 @@ $ rm -rf node-v7.7.2-linux-armv6l
 $ node --version
 $ exit
 ```
+
 ## 3. Install PostgreSQL
 ### A. Update & Install the Package
 ```
@@ -40,13 +41,12 @@ $ sudo -u postgres psql
 ```
 Enter in `deaddrop` for the password. This is the default. If you want to change it, remember to also update the `config/dbinit.sql` file.
 ```
-# CREATE DATABASE deaddrop;
+# CREATE DATABASE deaddrop; // Create the database. The tables will be built automaticaly.
 ```
 The database `deaddrop` is the default. If you want to change it, make sure to also update the `config/dbinit.sql` file.
 ```
-# \q
+# \q // Quit.
 ```
-*If you choose a different password, make sure to change it in the code as well.*
 
 ## 4. Set Environment
 This will allow your Pi to operate as both a *Central* and a *Peripheral*.
