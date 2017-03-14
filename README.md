@@ -10,18 +10,20 @@ M3SH is an off-line, secure messaging platform that uses Bluetooth LE (aka Bluet
 ## Technical
 For a technical writeup of the M3SH system and the laws that govern it, or to get started building your own M3SH node click [here]().
 
+---
+
+# Project
+
+More to come here.
+
+---
+
 ## Upates
 
 | Date        | Status  |
 | --- | --- |
 | 03.14.2017 | Finished up a proof of concept that creates a central, connects, handshakes and receives chunked data. |
 | 03.09.2017 | No code yet. Currently working on the iOS Client  |
-
----
-
-# Project
-
-More to come here.
 
 ---
 
