@@ -33,11 +33,12 @@ $ sudo -
 $ sudo apt-get update
 $ sudo apt-get install postgresql-9.4
 ```
-### B. Create a Password
+### B. Create a Password & Database
 ```
 $ sudo -u postgres psql
 # \password postgres
-[Enter & Confirm Password - Default is: deaddrop]
+[Enter & Confirm Password: deaddrop]
+# CREATE DATAVASE deaddrop;
 # \q
 ```
 *If you choose a different password, make sure to change it in the code as well.*
