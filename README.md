@@ -41,6 +41,7 @@ This project utilizes varying portions of the following code:
 | [sandeepmistry / noble](https://github.com/sandeepmistry/noble) | Bluetooth LE Central library | [MIT](https://github.com/sandeepmistry/noble/blob/master/LICENSE) |
 | [sandeepmistry / bleno](https://github.com/sandeepmistry/bleno) | Bluetooth LE Peripheral library | [MIT](https://github.com/sandeepmistry/bleno/blob/master/LICENSE) |
 | [pvord / node-md5](https://github.com/pvorb/node-md5) | MD5 implementation for Node | [BSD-3-Clause](https://github.com/pvorb/node-md5/blob/master/LICENSE) |
+| [vitaly-t / pg-promise] | Promises/A+ interface for PostgreSQL | [MIT](https://github.com/vitaly-t/pg-promise#license) |
 
 
 ## Cryptography Notice
