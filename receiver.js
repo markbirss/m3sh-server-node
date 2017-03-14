@@ -6,6 +6,7 @@ class Receiver {
 
         this.settings = settings;
         this.connectionPool = [];
+        this.dataPool = [];
     }
 
     connect( peripheral ) {
@@ -33,14 +34,9 @@ class Receiver {
 
                     // Get the "Package" characteristic to communcate
                     service.discoverCharacteristics( [], function ( err, characteristics ) {
-
                         characteristics.forEach( function ( characteristic ) {
-
                             if ( settings.uuids.characteristics.service == characteristic.uuid ) {
-
-                                characteristic.on( 'read', _state.event_onRead );
                                 _state.begin( characteristic );
-
                                 pool[ uuid ] = characteristic;
                             }
                         } )
@@ -54,20 +50,59 @@ class Receiver {
 
     };
 
-    event_onRead( data, isNotification ) {
-        console.log( 'read: ' + data );
+    event_readComplete( data ) {
+
+        if ( data === undefined || data === "" ) {
+            return;
+        }
+
+        console.log( "Message Received:" );
+        console.log( data );
     }
 
     begin( characteristic ) {
 
         var settings = this.settings;
+        var _state = this;
 
-        // 1. broadcast device name hash
-        let data = new Buffer( md5( settings.name ), 'utf8' );
-        console.log( "Saying hello..." );
-        characteristic.write( data, true, function ( err ) {
-            console.log( err );
-        } )
+        characteristic.notify( true, function ( err ) {
+
+            characteristic.on( 'data', function ( data, isNotification ) {
+
+                let chunk = data.toString( 'utf8' );
+
+                if ( chunk === settings.data.end ) {
+                    _state.event_readComplete( _state.dataPool[ 0 ] );
+                    _state.dataPool[ 0 ] = "";
+                } else if ( chunk === settings.data.canceled ) {
+                    _state.dataPool[ 0 ] = "";
+                } else {
+                    if ( _state.dataPool[ 0 ] === undefined ) {
+                        _state.dataPool[ 0 ] = chunk;
+                    } else {
+                        _state.dataPool[ 0 ] = _state.dataPool[ 0 ] + chunk;
+                    }
+                }
+            } );
+            characteristic.subscribe( function ( err ) {
+
+                // 1. broadcast device name hash
+                let data = new Buffer( md5( settings.name ), 'utf8' );
+
+                characteristic.write( data, true, function ( err ) {
+
+                    // 2. write the end of message bits
+                    let eom = new Buffer( settings.data.end, 'utf8' );
+                    characteristic.write( eom, true, function ( err ) {
+                        if ( err !== null ) {
+                            console.log( err );
+                        } else {
+                            console.log( "Handshake OK." );
+                        }
+                    } );
+                } )
+            } )
+        } );
     };
 }
 
