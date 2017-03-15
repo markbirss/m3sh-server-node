@@ -7,7 +7,7 @@ The Zero W needs a bit of custom work before you can clone this repository and g
 Use your favorite imaging app to burn an image of Jessie onto an SD card of your choice. I'm a fan of [Etcher](https://etcher.io). You can find the latest version of [Raspbian Jessie LITE here](https://www.raspberrypi.org/downloads/raspbian/).
 
 ## 2. Install Node.js v7+
-*Manually* install the [latest version](https://nodejs.org/en/download/current/) of Node.JS as follows. Replace the file name with the latest version of the __**Arm6**__ Linux Binary:
+*Manually* install the [latest version](https://nodejs.org/en/download/current/) of Node.JS as follows. If your'e installing on a *Pi Zero* or *Pi Zero W*, Replace the file name with the latest version of the __**Arm6**__ Linux Binary:
 ```
 $ sudo -
 $ wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-armv6l.tar.xz
