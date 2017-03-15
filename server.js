@@ -1,23 +1,47 @@
 var noble = require( 'noble' );
-var receiver = require( './receiver' );
-var pgp = require( 'pg-promise' )();
-var settings = require( './settings' );
+var bleno = require( 'bleno' );
 
-let rec = new receiver();
+var central = require( './lib/central' );
+var peripheral = require( './lib/peripheral' );
+var settings = require( './config/settings' );
 
-// Kick things off when powered on
+let Central = new central();
+let Peripheral = new peripheral();
+
+// Peripheral Boot-up
+bleno.on( 'stateChange', function ( state ) {
+    if ( state === 'poweredOn' ) {
+
+        // Begin advertising
+        bleno.startAdvertising( settings.deviceName, [ settings.uuids.service ], function ( err ) {
+            if ( err ) {
+                console.log( 'PER: ' + err );
+            }
+        } );
+    } else {
+        bleno.stopAdvertising();
+    }
+} );
+
+bleno.on( 'advertisingStart', Peripheral.handle );
+
+/*
+
+// Central Boot-up.
 noble.on( 'stateChange', function ( state ) {
     if ( state === 'poweredOn' ) {
 
         // Begin scanning
-        console.log( 'scanning...' );
+        console.log( 'CEN: Scanning...' );
         noble.startScanning( [ settings.uuids.service ], false );
     } else {
         noble.stopScanning();
     }
 } )
 
-// Kick off the discovery.
+// Central Discovery
 noble.on( 'discover', function ( peripheral ) {
-    rec.connect( peripheral );
+    Central.connect( peripheral );
 } )
+
+*/
