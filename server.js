@@ -23,6 +23,10 @@ bleno.on( 'stateChange', function ( state ) {
     }
 } );
 
+bleno.on( 'accept', function ( clientAddress ) {
+    console.log( clientAddress );
+} );
+
 bleno.on( 'advertisingStart', Peripheral.handle );
 
 /*
