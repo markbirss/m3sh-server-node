@@ -24,10 +24,9 @@ bleno.on( 'stateChange', function ( state ) {
     }
 } );
 
+// Peripheral Discovery.
 bleno.on( 'accept', peripheral.accept );
 bleno.on( 'advertisingStart', peripheral.handle );
-
-/*
 
 // Central Boot-up.
 noble.on( 'stateChange', function ( state ) {
@@ -45,5 +44,3 @@ noble.on( 'stateChange', function ( state ) {
 noble.on( 'discover', function ( peripheral ) {
     Central.connect( peripheral );
 } )
-
-*/
