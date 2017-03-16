@@ -2,11 +2,12 @@ var noble = require( 'noble' );
 var bleno = require( 'bleno' );
 
 var central = require( './lib/central' );
-var peripheral = require( './lib/peripheral' );
+var peripheral = require( './lib/peripheral' )
+    .init();
+
 var settings = require( './config/settings' );
 
 let Central = new central();
-let Peripheral = new peripheral();
 
 // Peripheral Boot-up
 bleno.on( 'stateChange', function ( state ) {
@@ -23,7 +24,8 @@ bleno.on( 'stateChange', function ( state ) {
     }
 } );
 
-bleno.on( 'advertisingStart', Peripheral.handle );
+bleno.on( 'accept', peripheral.accept );
+bleno.on( 'advertisingStart', peripheral.handle );
 
 /*
 
