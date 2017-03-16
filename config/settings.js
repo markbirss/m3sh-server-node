@@ -23,7 +23,7 @@ module.exports = {
     deviceName: "deaddrop",
     datastore: {
         host: 'localhost',
-        port: 5433,
+        port: 5432,
         database: 'deaddrop',
         user: 'pi',
         password: 'deaddrop'
