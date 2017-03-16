@@ -9,7 +9,7 @@ module.exports = {
     data: {
         end: 'EOD',
         canceled: 'COD',
-        maxSize: 250,
+        maxSize: 2048,
         package: {
             expiration: 3600,
             maxPropogation: 5,
