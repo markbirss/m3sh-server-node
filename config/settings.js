@@ -25,7 +25,7 @@ module.exports = {
         host: 'localhost',
         port: 5432,
         database: 'deaddrop',
-        user: 'pi',
+        user: 'postgres',
         password: 'deaddrop'
     }
 }
