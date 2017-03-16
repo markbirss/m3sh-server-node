@@ -8,6 +8,23 @@ var peripheral = require( './lib/peripheral' )
 
 let Central = new central();
 
+// Central Boot-up.
+noble.on( 'stateChange', function ( state ) {
+    if ( state === 'poweredOn' ) {
+
+        // Begin scanning
+        console.log( 'CEN: Scanning...' );
+        noble.startScanning( [ settings.uuids.service ], false );
+    } else {
+        noble.stopScanning();
+    }
+} )
+
+// Central Discovery
+noble.on( 'discover', function ( peripheral ) {
+    Central.connect( peripheral );
+} )
+
 // Peripheral Boot-up
 bleno.on( 'stateChange', function ( state ) {
     if ( state === 'poweredOn' ) {
@@ -26,20 +43,3 @@ bleno.on( 'stateChange', function ( state ) {
 // Peripheral Discovery.
 bleno.on( 'accept', peripheral.accept );
 bleno.on( 'advertisingStart', peripheral.handle );
-
-// Central Boot-up.
-noble.on( 'stateChange', function ( state ) {
-    if ( state === 'poweredOn' ) {
-
-        // Begin scanning
-        console.log( 'CEN: Scanning...' );
-        noble.startScanning( [ settings.uuids.service ], false );
-    } else {
-        noble.stopScanning();
-    }
-} )
-
-// Central Discovery
-noble.on( 'discover', function ( peripheral ) {
-    Central.connect( peripheral );
-} )
