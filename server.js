@@ -24,6 +24,7 @@ bleno.on( 'stateChange', function ( state ) {
     }
 } );
 
+
 // Peripheral Discovery.
 bleno.on( 'accept', peripheral.accept );
 bleno.on( 'advertisingStart', peripheral.handle );
