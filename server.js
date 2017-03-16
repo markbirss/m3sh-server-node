@@ -1,11 +1,10 @@
 var noble = require( 'noble' );
 var bleno = require( 'bleno' );
 
+var settings = require( './config/settings' );
 var central = require( './lib/central' );
 var peripheral = require( './lib/peripheral' )
     .init();
-
-var settings = require( './config/settings' );
 
 let Central = new central();
 
@@ -23,7 +22,6 @@ bleno.on( 'stateChange', function ( state ) {
         bleno.stopAdvertising();
     }
 } );
-
 
 // Peripheral Discovery.
 bleno.on( 'accept', peripheral.accept );
