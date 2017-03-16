@@ -20,15 +20,6 @@ More to come here.
 
 ---
 
-## Upates
-
-| Date        | Status  |
-| --- | --- |
-| 03.14.2017 | Finished up a proof of concept that creates a central, connects, handshakes and receives chunked data. |
-| 03.09.2017 | No code yet. Currently working on the iOS Client  |
-
----
-
 ## Contribute & Debug
 
 Please use our GitHub page to log a bug or suggest a feature.
