@@ -6,15 +6,13 @@ var central = require( './lib/central' );
 var peripheral = require( './lib/peripheral' )
     .init();
 
-let Central = new central();
-
 // Central Boot-up.
 noble.on( 'stateChange', function ( state ) {
     if ( state === 'poweredOn' ) {
 
         // Begin scanning
         console.log( 'CEN: Scanning...' );
-        noble.startScanning( [ settings.uuids.service.formatted ], false );
+        noble.startScanning( [ settings.uuids.service.formatted ], true );
     } else {
         noble.stopScanning();
     }
@@ -22,7 +20,7 @@ noble.on( 'stateChange', function ( state ) {
 
 // Central Discovery
 noble.on( 'discover', function ( peripheral ) {
-    Central.connect( peripheral );
+    central.connect( peripheral );
 } )
 
 // Peripheral Boot-up
