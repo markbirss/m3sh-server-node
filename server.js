@@ -14,7 +14,7 @@ noble.on( 'stateChange', function ( state ) {
 
         // Begin scanning
         console.log( 'CEN: Scanning...' );
-        noble.startScanning( [ settings.uuids.service ], false );
+        noble.startScanning( [ settings.uuids.service.formatted ], false );
     } else {
         noble.stopScanning();
     }
@@ -30,7 +30,7 @@ bleno.on( 'stateChange', function ( state ) {
     if ( state === 'poweredOn' ) {
 
         // Begin advertising
-        bleno.startAdvertising( settings.deviceName, [ settings.uuids.service ], function ( err ) {
+        bleno.startAdvertising( settings.deviceName, [ settings.uuids.service.pure ], function ( err ) {
             if ( err ) {
                 console.log( 'PER: ' + err );
             }
