@@ -1,3 +1,5 @@
+![M3SH](https://foreign.capital/github/m3sh-logo@2x.png)
+
 # RaspberryPi Zero W Setup
 The Zero W needs a bit of custom work before you can clone this repository and get it going. 
 
