@@ -1,4 +1,4 @@
-![M3SH](https://foreign.capital/github/m3sh-logo@2x.png)
+![M3SH](https://github.com/hrushka/m3sh-server-node/raw/master/assets/m3sh-logo%402x.png)
 
 # M3SH Server for Node.js & Raspberry Pi Zero W
 aka. *DeadDrop*
